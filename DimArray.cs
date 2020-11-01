@@ -4,10 +4,10 @@ namespace DimArray
     {
         private T[] _data;
 
-        public uint X;
-        public uint Y;
+        public int X;
+        public int Y;
 
-        public TwoDim(uint x, uint y)
+        public TwoDim(int x, int y)
         {
             var newData = new T[x * y];
             X = x;
