@@ -109,5 +109,26 @@ namespace DimArray
             }
             return s + "]";
         }
+
+        public string ToString1D()
+        {
+            string s = "[";
+
+            for (int x = 0; x < X; x++)
+            {
+                for (int y = 0; y < Y; y++)
+                {
+                    string temp = "";
+                    for (int z = 0; z < Z; z++)
+                    {
+                        temp += this[x, y, z];
+                        if (z != this.Z - 1) temp += ", ";
+                    }
+                    s += temp;
+                    if (x != X - 1 || y != Y - 1) s += ", ";
+                }
+            }
+            return s + "]";
+        }
     }
 }
