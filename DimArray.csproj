@@ -16,6 +16,9 @@
     <AssemblyTitle>DimArray</AssemblyTitle>
     <Description>A simple library abstracting 1D arrays to work like multiple dimension arrays.</Description>
     <Copyright>MIT</Copyright>
+
+    <PackageDescription>A simple library abstracting 1D arrays to work like multiple dimension arrays.</PackageDescription>
+    <RepositoryUrl>https://github.com/samhamnam/DimArray</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
