@@ -49,8 +49,8 @@ class Program
         } 
         
         // You can even print it!
-        Console.WriteLine(x);
-        Console.WriteLine(x.ToString1D());
+        Console.WriteLine(threeArray);
+        Console.WriteLine(twoArray.ToString1D());
     }
 }
 
