@@ -35,15 +35,3 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-
-nuget.config
-=======
-# kdevelop
-*.kdev4
-.kdev4/*
-*.o
-*.so
-test
-dimarraytest
-*.tar.gz
-*.tar.xz
