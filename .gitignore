@@ -37,4 +37,5 @@ msbuild.wrn
 .vs/
 
 nuget.config
-Test.sh
+*.sh
+
