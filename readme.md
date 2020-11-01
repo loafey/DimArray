@@ -22,21 +22,36 @@ class Program
     static void Main(string[] args)
     {
         // This creates a "2D" array of the specifed size.
-        var x = new DimArray.TwoDim<int>(5, 5);
+        var twoArray = new DimArray.TwoDim<int>(5, 5);
 
         // Use it like you would use a normal C# 2D jagged array.
-        for (int x = 0; x < testArray.X; x++)
+        for (int x = 0; x < twoArray.X; x++)
         {
-            for (int y = 0; y < testArray.Y; y++)
+            for (int y = 0; y < twoArray.Y; y++)
             {
-                testArray[x, y] = Math.Pow(x + y, 2);
+                twoArray[x, y] = Math.Pow(x + y, 2);
+            }
+        }
+        
+        // This creates a "3D" array of the specifed size.
+        var threeArray = new DimArray.ThreeDim<int>(5, 5, 5);
+
+        // Use it like you would use a normal C# 3D jagged array.
+        for (int x = 0; x < threeArray.X; x++)
+        {
+            for (int y = 0; y < threeArray.Y; y++)
+            {
+                for (int z = 0; z < threeArray.Z; z++
+                {
+                    threeArray[x, y, z] = Math.Pow(x + y + z, 2);
+                }
             }
         } 
+        
+        // You can even print it!
+        Console.WriteLine(x);
+        Console.WriteLine(x.ToString1D());
     }
-
-    // You can even print it!
-    Console.WriteLine(x);
-    Console.WriteLine(x.ToString1D());
 }
 
 ```
