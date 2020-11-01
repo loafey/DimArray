@@ -21,6 +21,7 @@ Then you can add it to the directory of your program or the default library path
 #include <iostream>
 int main()
 {
+    //Creating a new DimArray can be done for any type!
     DimArray::TwoDim<int>* arr = new DimArray::TwoDim<int>(5,5);
     
     DimArray::ThreeDim<int>* t_arr = new DimArray::ThreeDim<int>(50,50,50);
