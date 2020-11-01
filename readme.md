@@ -6,6 +6,8 @@ A simple library abstracting 1D arrays to work like multiple dimension arrays po
 
 For now, clone the repository, and use `make lib` to create the .so file or use `make` to create the test program
 
+For building with optimization use `make lib OPTIMIZE=-O2` and/or `make OPTIMIZE=-O2`
+
 Then you can add it to the directory of your program or the default library path and link it by adding `-ldimarray` to the end of your compile command
 
 ## Usage
