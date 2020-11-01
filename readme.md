@@ -47,7 +47,7 @@ int main()
 ```
 
 ## Contributing
-samhamnam sais: "Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change."
+samhamnam sais: *"Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change."*
 
 This version is a ported version, and will be updated along side the original lib, please refer to [samhamnam's original project](https://github.com/samhamnam/DimArray) to ask for features - If you want to change something about the C++ version please send me an email at antonr@live.dk
 
