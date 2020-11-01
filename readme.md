@@ -2,6 +2,8 @@
 
 A simple library abstracting 1D arrays to work like multiple dimension arrays ported to C++
 
+Currently supporting 2 and 3 dimensions
+
 ## Installation
 
 For now, clone the repository, and use `make lib` to create the .so file or use `make` to create the test program
@@ -21,15 +23,22 @@ int main()
 {
     DimArray::TwoDim<int>* arr = new DimArray::TwoDim<int>(5,5);
     
+    DimArray::ThreeDim<int>* t_arr = new DimArray::ThreeDim<int>(50,50,50);
+    
+    for(unsigned int x = 0; x < t_arr->X; x++)
+    {
+        for(unsigned int y = 0; y < t_arr->Y; y++)
+        {
+          for(unsigned int z = 0; z < t_arr->Z;z++)
+          {
+             (*t_arr)(x,y,z) = std::stoi(std::to_string(x) + std::to_string(y) + std::to_string(z)); 
+          }
+        }
+    }
     (*arr)(1,1) = 1;
-    std::cout << arr->ToString();
-    
+    std::cout << arr->ToString() << std::endl << std::endl;
+    std::cout << t_arr->ToString();
     delete arr;
-    
-    DimArray::TwoDim<std::string> arr = DimArray::TwoDim<std::string>(5,5);
-    
-    arr(4,1) = "A string buddy";
-    
     return 0;  
     
 }

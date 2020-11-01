@@ -17,6 +17,7 @@ EX := .so
 release: main.o
 	 #$(CXX) $(CXX_FLAGS) $(OPTIMIZE) -Wl,-rpath,./ -L./ -I./ main.o -o dimarraytest -ldimarray.so.1.0
 	 $(CXX) $(CXX_FLAGS) $(OPTIMIZE) -Wl,-rpath,./ -L./ -I./ main.o libdimarray.so -o dimarraytest $(LINK)
+	 make clean
 
 main.o: lib
 	$(CXX) -c $(CXX_FLAGS) $(OPTIMIZE) main.cpp -o main.o
@@ -29,5 +30,4 @@ lib: lib.o
 
 clean:
 	-rm *.o
-	-rm *so
 

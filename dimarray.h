@@ -66,5 +66,74 @@ namespace DimArray
             T* _data;
             uint32_t _length;
     };
+    template<typename T>
+    class ThreeDim
+    {
+        public:
+            T operator()(unsigned int xIndex,unsigned int yIndex, unsigned int zIndex) const
+            {
+                return _data[xIndex + X * (yIndex + Y * zIndex)];
+            }
+            T& operator()(unsigned int xIndex,unsigned int yIndex, unsigned int zIndex) 
+            {
+                return _data[xIndex + X * (yIndex + Y * zIndex)];
+            }
+            ThreeDim(unsigned int x, unsigned int y, unsigned int z)
+            {
+                T* newData = new T[x*y*z];
+                X = x;
+                Y = y;
+                Z = z;
+                _data = newData;
+                _length = x*y*z;
+    
+            }
+            
+            std::string ToString()
+            {
+            std::string s = "[";
+
+            for (int x = 0; x < X; x++)
+            {
+                for (int y = 0; y < Y; y++)
+                {
+
+                    for (int z = 0; z < Z; z++)
+                    {
+                        s += std::to_string(_data[x + X * (y + Y * z)]);
+                        if (x != X - 1 || z != Y - 1 || z != Z - 1) s += ",\t";
+                    }
+                }
+                if (x != X - 1) s += "\n";
+            }
+            return s + "]";
+            }
+            
+            std::string ToString1D()
+            {
+                std::string s = "[";
+                for (int i = 0; i < _length; i++)
+                {
+                    s += std::to_string(_data[i]);
+                    if (i != _length - 1) s += ", ";
+                }
+                s += "]";
+
+                return s;
+            }
+            const T* get() const { return _data; } 
+            void get(const T* t) { _data = t; };
+            unsigned int X;
+            unsigned int Y;
+            unsigned int Z;
+            ~ThreeDim()
+            {
+              delete[] _data;  
+            }
+            
+        private:
+            T* _data;
+            uint32_t _length;
+    };
 };
 //Load the function definitions
