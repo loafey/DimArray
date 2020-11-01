@@ -39,6 +39,7 @@ int main()
     std::cout << arr->ToString() << std::endl << std::endl;
     std::cout << t_arr->ToString();
     delete arr;
+    delete t_arr;
     return 0;  
     
 }
