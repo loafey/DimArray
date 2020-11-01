@@ -41,7 +41,7 @@ class Program
         {
             for (int y = 0; y < threeArray.Y; y++)
             {
-                for (int z = 0; z < threeArray.Z; z++
+                for (int z = 0; z < threeArray.Z; z++)
                 {
                     threeArray[x, y, z] = Math.Pow(x + y + z, 2);
                 }
