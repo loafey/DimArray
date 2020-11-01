@@ -43,3 +43,5 @@ msbuild.wrn
 *.so
 test
 dimarraytest
+*.tar.gz
+*.tar.xz
