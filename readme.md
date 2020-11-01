@@ -1,6 +1,9 @@
 # DimArray
 
-A simple library abstracting 1D arrays to work like multiple dimension arrays
+A simple library abstracting 1D arrays to work like multiple dimension arrays.
+
+## Why?
+Since multidimensional arrays are generally not performant this library kind of works around the problem by making a 1D array work like a 2D or 3D array.
 
 ## Installation
 
