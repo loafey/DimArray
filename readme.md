@@ -6,7 +6,7 @@ A simple library abstracting 1D arrays to work like multiple dimension arrays
 
 For now, clone the repository, and use `dotnet build` to build the library, or download a prebuilt binary from the release section.
 
-Drop the `DimArray.dll` into the project directory and add this to the `.csproj`.
+Drop the `DimArray.dll` into the project directory and add this to the `.csproj` in the right `ItemGroup`.
 ```xml
 <Reference Include="DimArray">
     <HintPath>DimArray.dll</HintPath>
