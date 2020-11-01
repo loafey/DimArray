@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <AssemblyName>DimArray</AssemblyName>
     <PackageId>DimArray</PackageId>
@@ -11,11 +10,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Authors>Samuel Hammersberg</Authors>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyTitle>DimArray</AssemblyTitle>
     <Description>A simple library abstracting 1D arrays to work like multiple dimension arrays.</Description>
     <Copyright>MIT</Copyright>
+
+    <PackageDescription>A simple library abstracting 1D arrays to work like multiple dimension arrays.</PackageDescription>
+    <RepositoryUrl>https://github.com/samhamnam/DimArray</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
