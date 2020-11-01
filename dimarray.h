@@ -38,7 +38,7 @@ namespace DimArray
             {
                 for (int y = 0; y < Y; y++)
                 {
-                    //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                    //using the namespace std here makes it so if the dataType is std::string, we end up calling our own to_string function that can just return the string instead of getting segfaulted
                     using namespace std;
                     s += to_string(_data[x + Y * y]);
 
@@ -54,7 +54,7 @@ namespace DimArray
                 std::string s = "[";
                 for (int i = 0; i < _length; i++)
                 {
-                    //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                    //using the namespace std here makes it so if the dataType is std::string, we end up calling our own to_string function that can just return the string instead of getting segfaulted
                     using namespace std;
                     s += to_string(_data[i]);
                     if (i != _length - 1) s += ", ";
