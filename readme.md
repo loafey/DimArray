@@ -40,6 +40,9 @@ class Program
 
 ```
 
+## Other implementations
+A CPP version can be found [here](https://github.com/AnzoDK/DimArray) made by AnzoDK.
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
