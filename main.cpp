@@ -20,6 +20,8 @@ int main()
     //std::cout << t_arr->ToString();
     delete arr;
     delete t_arr;
+    
+    //start timer
     auto start = std::chrono::high_resolution_clock::now();
     DimArray::ThreeDim<std::string>* s_arr = new DimArray::ThreeDim<std::string>(250,250,250);
     for(unsigned int x = 0; x < t_arr->X; x++)
@@ -35,8 +37,9 @@ int main()
     }
     //std::cout << s_arr->ToString();
     std::cout << std::endl;
-    auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start); 
+    auto stop = std::chrono::high_resolution_clock::now(); //stop timer
+    
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     auto seconds = std::chrono::duration_cast<std::chrono::seconds>(stop - start); 
     std::cout << "Execution of generating WITHOUT couting a 250,250,250 std::string array took: " << duration.count() << " milliseconds or around ";
     std::cout << seconds.count() << " seconds" <<std::endl;
