@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <AssemblyName>DimArray</AssemblyName>
+    <PackageId>DimArray</PackageId>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Samuel Hammersberg</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyTitle>DimArray</AssemblyTitle>
+    <Description>A simple library abstracting 1D arrays to work like multiple dimension arrays.</Description>
+    <Copyright>MIT</Copyright>
+  </PropertyGroup>
+
+</Project>
