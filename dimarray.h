@@ -1,7 +1,13 @@
 #pragma once
 #include <iostream>
+//for internal use
+std::string to_string(const std::string& value)
+{
+    return value;
+}
 namespace DimArray
 {
+    
     template<typename T>
     class TwoDim
     {
@@ -32,7 +38,9 @@ namespace DimArray
             {
                 for (int y = 0; y < Y; y++)
                 {
-                    s += std::to_string(_data[x + Y * y]);
+                    //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                    using namespace std;
+                    s += to_string(_data[x + Y * y]);
 
                     if (x != X - 1 || y != Y - 1) s += ",\t";
                 }
@@ -46,7 +54,9 @@ namespace DimArray
                 std::string s = "[";
                 for (int i = 0; i < _length; i++)
                 {
-                    s += std::to_string(_data[i]);
+                    //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                    using namespace std;
+                    s += to_string(_data[i]);
                     if (i != _length - 1) s += ", ";
                 }
                 s += "]";
@@ -100,7 +110,9 @@ namespace DimArray
 
                     for (int z = 0; z < Z; z++)
                     {
-                        s += std::to_string(_data[x + X * (y + Y * z)]);
+                        //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                        using namespace std;
+                        s += to_string(_data[x + X * (y + Y * z)]);
                         if (x != X - 1 || z != Y - 1 || z != Z - 1) s += ",\t";
                     }
                 }
@@ -113,8 +125,10 @@ namespace DimArray
             {
                 std::string s = "[";
                 for (int i = 0; i < _length; i++)
-                {
-                    s += std::to_string(_data[i]);
+                {   
+                    //using the namespace std here makes it so if the dataType is std::string, we can just return the string instead of getting segfaulted
+                    using namespace std;
+                    s += to_string(_data[i]);
                     if (i != _length - 1) s += ", ";
                 }
                 s += "]";
