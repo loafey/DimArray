@@ -1,7 +1,7 @@
 #include "dimarray.h"
 #include <iostream>
 #include <chrono>
-int main()
+/*int main()
 {
     DimArray::TwoDim<int>* arr = new DimArray::TwoDim<int>(5,5);
     DimArray::ThreeDim<int>* t_arr = new DimArray::ThreeDim<int>(50,50,50);
@@ -46,4 +46,30 @@ int main()
     delete s_arr;
     return 0;  
     
+}*/
+int main()
+{
+    unsigned int* dimSizes = new unsigned int[5] {5,5,5,5,5};
+    /*dimSizes[0] = 5;
+    dimSizes[1] = 5;
+    dimSizes[2] = 5;
+    dimSizes[3] = 4;
+    dimSizes[4] = 5;
+    dimSizes[5] = 6;*/
+    unsigned int* dimIndex = new unsigned int[5] {1,3,1,3,1};
+    /*dimIndex[0] = 1;
+    dimIndex[1] = 3;
+    dimIndex[2] = 1;
+    dimIndex[3] = 3;
+    dimIndex[4] = 4;
+    dimIndex[5] = 1;*/
+    DimArray::NDim<int>* nd = new DimArray::NDim<int>(5,dimSizes);
+    (*nd)(dimIndex,5) = 13131;
+    std::cout << nd->ToString1D() << std::endl;
+    std::cout << std::endl;
+    
+    delete[] dimSizes;
+    delete[] dimIndex;
+    delete(nd);
+  
 }
