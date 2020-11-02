@@ -1,5 +1,86 @@
 namespace DimArray
 {
+    public class NDim<T>
+    {
+        private T[] _data;
+
+        public int[] Sizes;
+
+        public NDim(int[] size)
+        {
+            Sizes = size;
+            int arraySize = 1;
+            for (int i = 0; i < size.Length; i++)
+            {
+                arraySize *= size[i];
+            }
+            _data = new T[arraySize];
+        }
+
+        private int generateIndex(int[] arrIndex)
+        {
+            int returnIndex = arrIndex[0];
+            for (int i = 1; i < arrIndex.Length; i++)
+            {
+                int offset = arrIndex[i];
+                for (int j = 0; j < i; j++)
+                {
+                    offset *= Sizes[j];
+                }
+                returnIndex += offset;
+            }
+            return returnIndex;
+        }
+        private int _generateIndex(int[] arrIndex)
+        {
+            int[] rounds = new int[Sizes.Length - 1];
+            int returnIndex = 0;
+            int tmpRoundData = 1;
+            for (int u = 0; u < Sizes.Length - 1; u++)
+            {
+                for (int i = 0; i < Sizes.Length - u - 1; i++)
+                {
+                    tmpRoundData *= Sizes[i];
+                }
+                tmpRoundData *= arrIndex[Sizes.Length - 1 - u];
+                rounds[u] = tmpRoundData;
+                tmpRoundData = 1;
+            }
+            for (int z = 0; z < Sizes.Length - 1; z++)
+            {
+                returnIndex += rounds[z];
+            }
+            returnIndex += arrIndex[0];
+            return returnIndex;
+        }
+
+        public T this[int[] index]
+        {
+            get
+            {
+                return _data[_generateIndex(index)];
+            }
+
+            set
+            {
+                _data[_generateIndex(index)] = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            string s = "[";
+
+            for (int i = 0; i < _data.Length; i++)
+            {
+                s += _data[i];
+                if (i != _data.Length - 1) s += ", ";
+            }
+            return s + "]";
+        }
+    }
+
+
     public class TwoDim<T>
     {
         private T[] _data;
