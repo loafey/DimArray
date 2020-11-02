@@ -58,12 +58,12 @@ namespace DimArray
         {
             get
             {
-                return _data[_generateIndex(index)];
+                return _data[generateIndex(index)];
             }
 
             set
             {
-                _data[_generateIndex(index)] = value;
+                _data[generateIndex(index)] = value;
             }
         }
 
