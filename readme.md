@@ -50,10 +50,30 @@ class Program
                 }
             }
         } 
+
+        // This creates a "4D" array of the specifed size using an NDim.
+        // NDims can be any size, and size and index are passed in as int arrays.
+        var nDim = new DimArray.NDim<int>(new int[]{5, 5, 5, 5});
+
+        // Use it like you would use a normal C# 4D jagged array.
+        for (int x = 0; x < nDim.Sizes[0]; x++)
+        {
+            for (int y = 0; y < nDim.Sizes[1]; y++)
+            {
+                for (int z = 0; z < nDim.Sizes[2]; z++)
+                {
+                    for (int w = 0; w < nDim.Sizes[3]; w++)
+                    {
+                        nDim[new int[]{x, y, z, w}] = Math.Pow(x + y + z + w, 2);
+                    }
+                }
+            }
+        } 
         
         // You can even print it!
         Console.WriteLine(threeArray);
         Console.WriteLine(twoArray.ToString1D());
+        Console.WriteLine(nDim); // nDims are currently printed as 1D.
     }
 }
 
