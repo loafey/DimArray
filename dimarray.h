@@ -153,25 +153,25 @@ namespace DimArray
     class NDim
     {
         public:
-            T operator()(unsigned int* nArrIndexes, unsigned int length) const
+            T operator()(unsigned int* nArrIndexes) const
             {
                 //dimention 0 = x 1 = y and so on
-                unsigned int* rounds = new unsigned int[length-1];
+                unsigned int* rounds = new unsigned int[Dims-1];
                 unsigned int returnIndex = 0;
                 unsigned int tmpRoundData = 1;
-                for(unsigned int u = 0; u < length-1;u++)
+                for(unsigned int u = 0; u < Dims-1;u++)
                 {
-                    for(unsigned int i = 0; i < length-u-1; i++)
+                    for(unsigned int i = 0; i < Dims-u-1; i++)
                     {
                         tmpRoundData *= Sizes[i]; 
                     }
-                    tmpRoundData *= nArrIndexes[length-1-u];
+                    tmpRoundData *= nArrIndexes[Dims-1-u];
                     rounds[u] = tmpRoundData;
                     tmpRoundData = 1;
                     std::cout << "Round Data added up to " << tmpRoundData << std::endl;
                 }
                 std::cout << "Combining : ";
-                for(int z = 0; z < length-1; z++)
+                for(int z = 0; z < Dims-1; z++)
                 {
                     returnIndex += rounds[z];
                     std::cout << " " << rounds[z];
@@ -185,25 +185,25 @@ namespace DimArray
                 return _data[returnIndex];
             }
             
-            T& operator()(unsigned int* nArrIndexes, unsigned int length) 
+            T& operator()(unsigned int* nArrIndexes) 
             {
                 //dimention 0 = x 1 = y and so on
-                unsigned int* rounds = new unsigned int[length-1];
+                unsigned int* rounds = new unsigned int[Dims-1];
                 unsigned int returnIndex = 0;
                 unsigned int tmpRoundData = 1;
-                for(unsigned int u = 0; u < length-1;u++)
+                for(unsigned int u = 0; u < Dims-1;u++)
                 {
-                    for(unsigned int i = 0; i < length-u-1; i++)
+                    for(unsigned int i = 0; i < Dims-u-1; i++)
                     {
                         tmpRoundData *= Sizes[i]; 
                     }
-                    tmpRoundData *= nArrIndexes[length-1-u];
+                    tmpRoundData *= nArrIndexes[Dims-1-u];
                     rounds[u] = tmpRoundData;
                     tmpRoundData = 1;
                     std::cout << "Round Data added up to " << tmpRoundData << std::endl;
                 }
                 std::cout << "Combining : ";
-                for(int z = 0; z < length-1; z++)
+                for(int z = 0; z < Dims-1; z++)
                 {
                     returnIndex += rounds[z];
                     std::cout << " " << rounds[z];

@@ -64,7 +64,7 @@ int main()
     dimIndex[4] = 4;
     dimIndex[5] = 1;*/
     DimArray::NDim<int>* nd = new DimArray::NDim<int>(5,dimSizes);
-    (*nd)(dimIndex,5) = 13131;
+    (*nd)(dimIndex) = 13131;
     std::cout << nd->ToString1D() << std::endl;
     std::cout << std::endl;
     
