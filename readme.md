@@ -55,7 +55,7 @@ class Program
         // NDims can be any size, and size and index are passed in as int arrays.
         var nDim = new DimArray.NDim<int>(new int[]{5, 5, 5, 5});
 
-        // Use it like you would use a normal C# 4D jagged array.
+        // Use it like you would use a normal C# jagged array.
         for (int x = 0; x < nDim.Sizes[0]; x++)
         {
             for (int y = 0; y < nDim.Sizes[1]; y++)
